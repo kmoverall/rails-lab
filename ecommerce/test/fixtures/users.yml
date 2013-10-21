@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  username: MyString
+  password: MyString
+  address: MyString
+  is_vendor: 
+  shopping_cart: 
+  order: 
+
+two:
+  username: MyString
+  password: MyString
+  address: MyString
+  is_vendor: 
+  shopping_cart: 
+  order: 
