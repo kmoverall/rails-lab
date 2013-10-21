@@ -4,6 +4,7 @@ development:
   adapter: mysql
   host: mysql.cs.uky.edu
   database: gttu222
+  username: gttu222
   password: u0670864
 
 # Warning: The database defined as "test" will be erased and
