@@ -423,3 +423,199 @@ ActionView::TemplateError (undefined method `price' for #<Item:0x7f9c33cd0e48>) 
 Rendered rescues/_trace (37.6ms)
 Rendered rescues/_request_and_response (0.4ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131021182200)
+Migrating to CreateUsers (20131021182614)
+Migrating to CreateShoppingCarts (20131021182727)
+Migrating to CreateInventories (20131021182936)
+Migrating to CreateCatalogs (20131021183009)
+Migrating to AddCatalogToItems (20131023182324)
+  [4;35;1mSQL (113.9ms)[0m   [0mALTER TABLE `items` ADD `catalog_id` int(11)[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023182324')[0m
+Migrating to AddNameToCatalog (20131023182351)
+  [4;35;1mSQL (56.9ms)[0m   [0mALTER TABLE `catalogs` ADD `name` varchar(255)[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023182351')[0m
+Migrating to RemoveHasManyFromCatalog (20131023182443)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't DROP 'has_many'; check that column/key exists: ALTER TABLE `catalogs` DROP `has_many`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131021182200)
+Migrating to CreateUsers (20131021182614)
+Migrating to CreateShoppingCarts (20131021182727)
+Migrating to CreateInventories (20131021182936)
+Migrating to CreateCatalogs (20131021183009)
+Migrating to AddCatalogToItems (20131023182324)
+Migrating to AddNameToCatalog (20131023182351)
+Migrating to RemoveHasManyFromCatalog (20131023182700)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't DROP 'items'; check that column/key exists: ALTER TABLE `catalogs` DROP `items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131021182200)
+Migrating to CreateUsers (20131021182614)
+Migrating to CreateShoppingCarts (20131021182727)
+Migrating to CreateInventories (20131021182936)
+Migrating to CreateCatalogs (20131021183009)
+Migrating to AddCatalogToItems (20131023182324)
+Migrating to AddNameToCatalog (20131023182351)
+Migrating to RemoveHasManyFromCatalog (20131023182700)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't DROP 'items'; check that column/key exists: ALTER TABLE `catalogs` DROP `items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131021182200)
+Migrating to CreateUsers (20131021182614)
+Migrating to CreateShoppingCarts (20131021182727)
+Migrating to CreateInventories (20131021182936)
+Migrating to CreateCatalogs (20131021183009)
+Migrating to AddCatalogToItems (20131023182324)
+Migrating to AddNameToCatalog (20131023182351)
+Migrating to RemoveItemsFromCatalog (20131023183229)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't DROP 'has_many'; check that column/key exists: ALTER TABLE `catalogs` DROP `has_many`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (42.0ms)[0m   [0;1mCREATE TABLE `catalogs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (33.2ms)[0m   [0;1mCREATE TABLE `inventories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (41.8ms)[0m   [0;1mCREATE TABLE `shopping_carts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (58.1ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `address` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (118.6ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `schema_migrations`[0m
+  [4;36;1mSQL (115.3ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20131021183009')[0m
+  [4;36;1mSQL (49.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20131021182200')[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20131021182727')[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20131021182936')[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20131021182614')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131021182200)
+Migrating to CreateUsers (20131021182614)
+Migrating to CreateShoppingCarts (20131021182727)
+Migrating to CreateInventories (20131021182936)
+Migrating to CreateCatalogs (20131021183009)
+Migrating to AddCatalogToItems (20131023182324)
+  [4;35;1mSQL (112.1ms)[0m   [0mALTER TABLE `items` ADD `catalog_id` int(11)[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023182324')[0m
+Migrating to AddNameToCatalog (20131023182351)
+  [4;35;1mSQL (56.8ms)[0m   [0mALTER TABLE `catalogs` ADD `name` varchar(255)[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023182351')[0m
+Migrating to RemoveItemsFromCatalog (20131023183229)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't DROP 'has_many'; check that column/key exists: ALTER TABLE `catalogs` DROP `has_many`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131021182200)
+Migrating to CreateUsers (20131021182614)
+Migrating to CreateShoppingCarts (20131021182727)
+Migrating to CreateInventories (20131021182936)
+Migrating to CreateCatalogs (20131021183009)
+Migrating to AddCatalogToItems (20131023182324)
+Migrating to AddNameToCatalog (20131023182351)
+Migrating to RemoveItemsFromCatalog (20131023183229)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't DROP 'has_many'; check that column/key exists: ALTER TABLE `catalogs` DROP `has_many`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to AddNameToCatalog (20131023182351)
+  [4;35;1mSQL (115.0ms)[0m   [0mALTER TABLE `catalogs` DROP `name`[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20131023182351'[0m
+Migrating to AddCatalogToItems (20131023182324)
+  [4;35;1mSQL (56.8ms)[0m   [0mALTER TABLE `items` DROP `catalog_id`[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20131023182324'[0m
+Migrating to CreateCatalogs (20131021183009)
+  [4;35;1mSQL (13.9ms)[0m   [0mDROP TABLE `catalogs`[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20131021183009'[0m
+Migrating to CreateInventories (20131021182936)
+  [4;35;1mSQL (25.3ms)[0m   [0mDROP TABLE `inventories`[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20131021182936'[0m
+Migrating to CreateShoppingCarts (20131021182727)
+  [4;35;1mSQL (10.9ms)[0m   [0mDROP TABLE `shopping_carts`[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20131021182727'[0m
+Migrating to CreateUsers (20131021182614)
+  [4;35;1mSQL (12.7ms)[0m   [0mDROP TABLE `users`[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20131021182614'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `items`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131021182200)
+  [4;35;1mSQL (16.0ms)[0m   [0mDROP TABLE `items`[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20131021182200'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131023191107)
+  [4;35;1mSQL (85.7ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023191107')[0m
+Migrating to CreateCatalogs (20131023191136)
+  [4;35;1mSQL (31.3ms)[0m   [0mCREATE TABLE `catalogs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023191136')[0m
+Migrating to CreateInventories (20131023191244)
+  [4;35;1mSQL (31.3ms)[0m   [0mCREATE TABLE `inventories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023191244')[0m
+Migrating to CreateUsers (20131023191345)
+  [4;35;1mSQL (39.5ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `is_vendor` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023191345')[0m
+Migrating to CreateOrders (20131023191410)
+  [4;35;1mSQL (39.6ms)[0m   [0mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023191410')[0m
+Migrating to CreateShoppingCarts (20131023191700)
+  [4;35;1mSQL (64.6ms)[0m   [0mCREATE TABLE `shopping_carts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (16.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023191700')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `catalogs`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `catalogs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `catalogs`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `inventories`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `inventories`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `inventories`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `items`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `items`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `orders`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `orders`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `shopping_carts`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `shopping_carts`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `shopping_carts`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `users`[0m

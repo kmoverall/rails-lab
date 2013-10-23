@@ -2,22 +2,16 @@
 
 <table>
   <tr>
-    <th>Username</th>
-    <th>Password</th>
-    <th>Address</th>
+    <th>Name</th>
+    <th>Orders</th>
     <th>Is vendor</th>
-    <th>Shopping cart</th>
-    <th>Order</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%=h user.username %></td>
-    <td><%=h user.password %></td>
-    <td><%=h user.address %></td>
+    <td><%=h user.name %></td>
+    <td><%=h user.orders %></td>
     <td><%=h user.is_vendor %></td>
-    <td><%=h user.shopping_cart %></td>
-    <td><%=h user.order %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

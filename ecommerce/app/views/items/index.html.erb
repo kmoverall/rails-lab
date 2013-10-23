@@ -3,16 +3,12 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Price</th>
-    <th>Instock</th>
     <th>Description</th>
   </tr>
 
 <% @items.each do |item| %>
   <tr>
     <td><%=h item.name %></td>
-    <td><%=h item.price %></td>
-    <td><%=h item.instock %></td>
     <td><%=h item.description %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>

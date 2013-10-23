@@ -4,28 +4,16 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </p>
-  <p>
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.label :orders %><br />
+    <%= f.text_field :orders %>
   </p>
   <p>
     <%= f.label :is_vendor %><br />
-    <%= f.text_field :is_vendor %>
-  </p>
-  <p>
-    <%= f.label :shopping_cart %><br />
-    <%= f.text_field :shopping_cart %>
-  </p>
-  <p>
-    <%= f.label :order %><br />
-    <%= f.text_field :order %>
+    <%= f.check_box :is_vendor %>
   </p>
   <p>
     <%= f.submit 'Update' %>
