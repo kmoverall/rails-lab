@@ -619,3 +619,39 @@ Migrating to CreateShoppingCarts (20131023191700)
   [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `users`[0m
   [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateItems (20131023191107)
+Migrating to CreateCatalogs (20131023191136)
+Migrating to CreateInventories (20131023191244)
+Migrating to CreateUsers (20131023191345)
+Migrating to CreateOrders (20131023191410)
+Migrating to CreateShoppingCarts (20131023191700)
+Migrating to AddCatalogToItems (20131023191959)
+  [4;35;1mSQL (108.2ms)[0m   [0mALTER TABLE `items` ADD `catalog_id` int(11)[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023191959')[0m
+Migrating to AddNameToCatalog (20131023192016)
+  [4;35;1mSQL (56.8ms)[0m   [0mALTER TABLE `catalogs` ADD `name` varchar(255)[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20131023192016')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `catalogs`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `catalogs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `catalogs`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `inventories`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `inventories`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `inventories`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `items`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `items`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `orders`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `orders`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `shopping_carts`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `shopping_carts`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `shopping_carts`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `users`[0m
